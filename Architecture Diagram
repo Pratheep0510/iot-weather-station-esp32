@@ -1,0 +1,19 @@
+  [ DHT22 Sensor ] ---> (GPIO 17) ---> [ ESP32 Edge Node ]
+                                                |
+                                      (Asynchronous Loop)
+                                                |
+                     +--------------------------+--------------------------+
+
+                     |                                                     |
+             (Local I2C Bus)                                       (Wi-Fi Link Layer)
+
+                     |                                                     |
+         [ SSD1306 OLED Display ]                             [ Wokwi-GUEST Virtual Router ]
+
+                     |                                                     |
+         (Real-time Telemetry Grid)                             (HTTP REST API Ingestion)
+                                                                           |
+                                                                           v
+                                                            [ ThingSpeak Cloud Engine ]
+                                                                           |
+                                                                  (Time-Series Graphs)
